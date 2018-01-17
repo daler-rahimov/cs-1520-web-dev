@@ -1,0 +1,17 @@
+<!doctype html>
+	<head>
+		<title>{% block title %}Welcome{% endblock %} | Chat</title>
+		<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script> 
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">		
+	</head>
+<div class="page">
+  <h1>Budget</h1>
+  <div class="navigation">
+  </div>
+  <div class="body">
+  {% block body %}{% endblock %}
+  </div>
+  <div class="footer">
+    Budget &mdash; A Flask Application
+  </div>
+</div>

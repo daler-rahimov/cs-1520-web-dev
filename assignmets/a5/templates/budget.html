@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block title %}Stuff{% endblock %}
+{% block body %}
+{% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+  	
+  <h2>Categories</h2>
+  <div class="twitbox">
+  	<h3>Create a new Category</h3>
+  	Name<input type="text" name="cat_name" size="20" id="cat_name">  
+    Limit<input type="text" name="cat_limit" size="10" id="cat_limit">  
+    Spent<input type="text" name="cat_spent" size="10" id="cat_spent">  
+  	<input type="button" value="Create" id="create_cat">  
+  </div>
+  
+  <h3>List of Categories</h3>
+  <ul id="cat_list" ></ul>
+  
+  <h2>Purcheses</h2>
+  <div class="twitbox">
+  	<h3>Create a new Purchase</h3>
+  	Amount<input type="text" name="purch_amount" size="20" id="purch_amount">  
+    Spent On<input type="text" name="spent_on" size="10" id="spent_on">  
+    Catategory 
+    <select name="purch_cats" size="1" id="purch_cats">
+  	</select>
+  	<input type="button" value="Create" id="create_purch">  
+  </div>
+  
+  <h3>List of Purcheses</h3>
+  <ul id="purch_list" ></ul>
+  	
+  	
+{% endblock %}

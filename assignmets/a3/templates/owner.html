@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block title %}Owner{% endblock %}
+{% block body %}
+  <h2>List of events</h2>
+  {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+  	{% if events_stuff %}
+  		{% for e in events_stuff %}
+  			<h4 >    Event date: {{e.e.date}}</h4>
+  			<h5>           Employee assinged:</h5>
+  			
+  			{% if e.stuff %}
+  			<ol>
+  			   {% for stuff in e.stuff %}
+  				<li>{{stuff.username}}</li>  		    
+  			   {% endfor %}
+  			</ol>
+  			{% else %}
+  				  <div class="error"><strong>There is no employee assigned to this event</strong></div>
+  			{% endif %}
+  		{% endfor %}
+  	{% else %}
+  		<div class="error"><strong>There is no event to display</strong></div>
+  	{% endif %}
+  <h4><a href="/create_new_stuff">Create Employee Account</a></h4> 
+{% endblock %}

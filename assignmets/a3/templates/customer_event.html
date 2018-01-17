@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Customer Events{% endblock %}
+{% block body %}
+  <h2>Add A New Event</h2>
+    {% if error %}<div class="error"><strong>Error:</strong> {{ error }}</div>{% endif %}
+  <form action="" method="post">
+    <dl>
+      <dt>New Evnet Date:
+      <dd><input type="date" name="date">
+    </dl>
+    <div class="actions"><input type="submit" value="Create Event"></div>
+  </form>
+  <h2>All of your events</h2>
+  	{% if events %}
+  		{% for event in events %}
+  			<h4 >    Event date: {{event.date}}   <a href="/customer_event?rm_event_id={{event.event_id}}">remove</a> </h4>
+  		{% endfor %}
+  	{% endif %}
+{% endblock %}

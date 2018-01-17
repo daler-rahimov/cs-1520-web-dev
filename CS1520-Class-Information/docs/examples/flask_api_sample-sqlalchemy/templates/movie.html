@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <a href="/" class="btn btn-default"><span class="glyphicon glyphicon-home"></span> Home</a>
+        <div class="media">
+            <div class="media-left">
+                <a href="#">
+                    <img class="media-object" src="{{movie.poster}}" alt="{{movie.title}}-poster">
+                </a>
+            </div>
+            <div class="media-body">
+                <h1>{{movie.title}} <small>{{movie.year}}</small></h1>
+                <p>{{movie.plot}}</p>
+                <ul class="list-inline">
+                    <li><small>Runtime:</small> {{movie.runtime}}</li>
+                    <li><small>Rating:</small> {{movie.rated}}</li>
+                    <li><small>Release Date:</small> {{movie.released}}</li>
+                    <li><small>Genre:</small> {{movie.genre}}</li>
+                    <li><small>Language:</small> {{movie.language}}</li>
+                    <li><small>Country:</small> {{movie.country}}</li>
+                    <li><small>Metascore:</small> {{movie.metascore}}</li>
+                    <li><small>IMDB:</small> {{movie.imdbRating}}</li>
+                    <li><small>Awards:</small> {{movie.awards}}</li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li><small>Directed by</small> {{movie.director}}</li>
+                    <li><small>Written by</small> {{movie.writer}}</li>
+                    <li><small>Featuring</small> {{movie.actors}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+</div>
+{% endblock %}
